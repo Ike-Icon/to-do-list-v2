@@ -4,14 +4,17 @@
 }
 
 .container {
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 450px;
+  margin: 100px auto;
   padding: 20px;
-  background-color: #f2f2f2;
+  background-color: rgba(232, 241, 242, 0.8235294118);
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 1px rgba(13, 25, 49, 0.3764705882);
 }
 
 h1 {
   text-align: center;
+  color: blueviolet;
 }
 
 form {
@@ -28,7 +31,7 @@ form input[type=text] {
 
 form button {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: blueviolet;
   color: white;
   border: none;
   border-radius: 0 5px 5px 0;
@@ -45,22 +48,29 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  margin-bottom: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 li.completed {
-  background-color: #f2f2f2;
+  background-color: rgba(228, 220, 216, 0.884);
   text-decoration: line-through;
 }
 
 li button {
-  padding: 5px;
-  background-color: #f44336;
-  color: white;
+  padding: 10px;
+  color: #0D1931;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.completed-btn {
+  padding: 10px;
+  color: #12A548;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -74,14 +84,28 @@ li button {
 
 .filter-btn {
   padding: 10px 20px;
-  background-color: white;
-  color: #4CAF50;
-  border: 2px solid #4CAF50;
+  background-color: #fff;
+  color: blueviolet;
+  border: 2px solid blueviolet;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .filter-btn.active {
-  background-color: #4CAF50;
-  color: white;
+  background-color: blueviolet;
+  color: #fff;
+}
+
+.head-line {
+  display: flex;
+}
+
+.head-line i {
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+  margin-left: 20px;
 }/*# sourceMappingURL=style.css.map */
