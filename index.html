@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="icons-v6/css/all.css"/>
+    <title>To-Do List</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+      <h1>To-Do List</h1>
+      
+      
+      <div id="filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+        <button class="filter-btn" data-filter="uncompleted">Uncompleted</button>
+      </div>
+
+      <ul id="list"></ul>
+
+      <form id="form">
+        <input type="text" id="input" placeholder="Enter task...">
+        <button type="submit" id="add-btn"><i class="fa fa-plus" aria-hidden="true"></i></button>
+      </form>
+      
+    </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
