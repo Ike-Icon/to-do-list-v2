@@ -42,6 +42,7 @@ function addTodo(event) {
       id: Date.now(),
       text: todoText,
       completed: false,
+      date: new Date().toLocaleDateString(),
     };
     // use the push() method to add the todo object to the
     todos.push(todo);
@@ -78,21 +79,29 @@ function displayTodos(filter = "all") {
       return true;
     }
   });
+
   list.innerHTML = "";
+
   filteredTodos.forEach((todo) => {
     const li = document.createElement("li");
     li.setAttribute("data-id", todo.id);
     li.classList.toggle("completed", todo.completed);
+
     const completeBtnText = todo.completed
       ? "Incomplete"
       : "<i class='fa fa-check' aria-hidden='true'></i>";
+
     li.innerHTML = `
-  <span>${todo.text}</span>
-  <button class="delete-btn"><i class="fa fa-trash" aria-hidden="true"></i></button>
-  <button class="completed-btn">${completeBtnText}</button>
-`;
+      <span>${todo.text}</span>
+      <span class="date">${todo.date}</span>
+      <div>
+        <button class="delete-btn"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        <button class="completed-btn">${completeBtnText}</button>
+      </div>
+    `;
+
     const deleteBtn = li.querySelector(".delete-btn");
-    deleteBtn.addEventListener("click", (Event) => {
+    deleteBtn.addEventListener("click", (event) => {
       const todoId = parseInt(li.getAttribute("data-id"));
       todos = todos.filter((todo) => todo.id !== todoId);
       displayTodos();
@@ -100,7 +109,7 @@ function displayTodos(filter = "all") {
     });
 
     const completeBtn = li.querySelector(".completed-btn");
-    completeBtn.addEventListener("click", (Event) => {
+    completeBtn.addEventListener("click", (event) => {
       const todoId = parseInt(li.getAttribute("data-id"));
       const todoIndex = todos.findIndex((todo) => todo.id === todoId);
       todos[todoIndex].completed = !todos[todoIndex].completed;
@@ -111,6 +120,8 @@ function displayTodos(filter = "all") {
     list.appendChild(li);
   });
 }
+
+
 
 function saveTodos() {
   localStorage.setItem("todos", JSON.stringify(todos));
