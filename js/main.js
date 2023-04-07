@@ -53,6 +53,7 @@ function addTodo(event) {
   }
 }
 
+// Delete function 
 function deleteTodo(event) {
   if (event.target.tagName.toLowerCase() === "button") {
     const todoId = parseInt(event.target.parentElement.getAttribute("data-id"));
@@ -62,6 +63,7 @@ function deleteTodo(event) {
   }
 }
 
+// fuction for filter(complete or no)
 function filterTodo(event) {
   const filter = event.target.getAttribute("data-filter");
   filterBtns.forEach((btn) => btn.classList.remove("active"));
@@ -69,6 +71,7 @@ function filterTodo(event) {
   displayTodos(filter);
 }
 
+// function to display the todos with date
 function displayTodos(filter = "all") {
   const filteredTodos = todos.filter((todo) => {
     if (filter === "completed") {
@@ -122,7 +125,7 @@ function displayTodos(filter = "all") {
 }
 
 
-
+// save todos 
 function saveTodos() {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
